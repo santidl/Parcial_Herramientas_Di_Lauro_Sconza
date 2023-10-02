@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbhv330etism0"]
+
+[ext_resource type="Script" path="res://Player/Inicio.gd" id="1_iuoid"]
+[ext_resource type="Texture2D" uid="uid://dkbff5epwqwi3" path="res://Libertad/iniciar0001.png" id="2_pw5p1"]
+[ext_resource type="Texture2D" uid="uid://bkqo8y2w6fydk" path="res://Libertad/asd.png" id="3_e6uu1"]
+[ext_resource type="Texture2D" uid="uid://fahtgathyw5k" path="res://Libertad/MARTINNNNNNNNNNNNNNN2.png" id="4_151wy"]
+[ext_resource type="Texture2D" uid="uid://dylhhw8dl0v75" path="res://Libertad/LIBERTAAAAAAAAAAAD.png" id="5_bv208"]
+
+[node name="Inicio" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iuoid")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -26.0
+offset_right = 27.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.51835, 1.28786)
+texture_normal = ExtResource("2_pw5p1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(210, 190)
+scale = Vector2(0.346, 0.254875)
+texture = ExtResource("3_e6uu1")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(220, 141)
+scale = Vector2(0.534, 0.5)
+texture = ExtResource("4_151wy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(210, 50)
+scale = Vector2(1.53955, 1)
+texture = ExtResource("5_bv208")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

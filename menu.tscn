@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://d3vyldrmf12d0"]
+
+[ext_resource type="Texture2D" uid="uid://pcyapdc2jkr4" path="res://Libertad/COMENZAR0001.png" id="1_7aglk"]
+[ext_resource type="Script" path="res://menu.gd" id="1_l7juu"]
+[ext_resource type="Texture2D" uid="uid://bedgmu01v5j4x" path="res://Libertad/Sprite-0003.png" id="2_iidnk"]
+[ext_resource type="Texture2D" uid="uid://uka1qxt77l24" path="res://Libertad/Sprite-0002.png" id="3_7kkd7"]
+[ext_resource type="Texture2D" uid="uid://bt8j7vpnnjiw8" path="res://Libertad/Sprite-0005.png" id="4_gg8o1"]
+[ext_resource type="Texture2D" uid="uid://bkqo8y2w6fydk" path="res://Libertad/asd.png" id="6_2dxdt"]
+[ext_resource type="Texture2D" uid="uid://bt2ic3xgwvit2" path="res://Libertad/MARTINNNNNNNNNNNNNNN.png" id="7_tsaan"]
+[ext_resource type="Texture2D" uid="uid://dylhhw8dl0v75" path="res://Libertad/LIBERTAAAAAAAAAAAD.png" id="8_66wys"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l7juu")
+metadata/_edit_vertical_guides_ = []
+metadata/_edit_horizontal_guides_ = []
+
+[node name="botones" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -111.0
+offset_bottom = 111.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Jugar" type="TextureButton" parent="botones"]
+layout_mode = 2
+texture_normal = ExtResource("1_7aglk")
+
+[node name="opciones" type="TextureButton" parent="botones"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_iidnk")
+
+[node name="creditos" type="TextureButton" parent="botones"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_7kkd7")
+
+[node name="salir" type="TextureButton" parent="botones"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_gg8o1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(128, 199)
+scale = Vector2(0.304, 0.20975)
+texture = ExtResource("6_2dxdt")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(213.4, 120.222)
+scale = Vector2(0.485455, 0.4088)
+texture = ExtResource("7_tsaan")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(129, 105)
+scale = Vector2(1.28955, 1)
+texture = ExtResource("8_66wys")
+
+[connection signal="pressed" from="botones/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="botones/opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="botones/creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="botones/salir" to="." method="_on_salir_pressed"]

@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6oghmi0le887"]
+
+[ext_resource type="Texture2D" uid="uid://dbdkeqrjd28ga" path="res://Libertad/CONT.png" id="1_ig6f8"]
+[ext_resource type="Texture2D" uid="uid://djopcntivt8sw" path="res://Libertad/MENNN.png" id="2_ak1bk"]
+[ext_resource type="Script" path="res://paus.gd" id="3_tevv0"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_top = -144.0
+offset_right = 51.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.36532, 0.822505)
+
+[node name="cont" type="TextureButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_ig6f8")
+
+[node name="menu5" type="TextureButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_ak1bk")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -18.0
+offset_top = 35.0
+offset_right = 31.0
+offset_bottom = 61.0
+grow_horizontal = 2
+text = "Pausa"
+script = ExtResource("3_tevv0")
+
+[connection signal="pressed" from="Panel/VBoxContainer/cont" to="Panel/Label" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/cont" to="Panel/Label" method="_on_cont_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/menu5" to="Panel/Label" method="_on_texture_button_2_pressed"]

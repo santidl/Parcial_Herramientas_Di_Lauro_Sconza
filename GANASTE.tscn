@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0p2frm64jv58"]
+
+[ext_resource type="Script" path="res://GANASTE.gd" id="2_uxy12"]
+[ext_resource type="Texture2D" uid="uid://bowib46o2dlrf" path="res://Libertad/RES.png" id="2_v6pdb"]
+[ext_resource type="Texture2D" uid="uid://djopcntivt8sw" path="res://Libertad/MENNN.png" id="3_w1c6h"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_uxy12")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_top = -144.0
+offset_right = 51.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.36532, 0.822505)
+
+[node name="asd" type="TextureButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_v6pdb")
+
+[node name="menu win" type="TextureButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_w1c6h")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -35.0
+offset_top = 29.0
+offset_right = 46.0
+offset_bottom = 55.0
+grow_horizontal = 2
+text = "¡GANASTE!"
+
+[connection signal="pressed" from="Panel/VBoxContainer/asd" to="." method="_on_asd_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/menu win" to="." method="_on_menu_win_pressed"]

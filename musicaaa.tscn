@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://blusgpw14wt0f"]
+
+[ext_resource type="AudioStream" uid="uid://bn217cu672pbv" path="res://Bandera/zapsplat_cartoon_marching_walking_heavy_elephant_musical_military_18129.mp3" id="1_ur7aa"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_ur7aa")
+autoplay = true
